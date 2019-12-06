@@ -12,7 +12,7 @@ print("done loading")
 print(myfn)
 mybasenm <- basename(myfn)
 print(mybasenm)
-myfn <- load(paste0("../SB_Data/", myfn))
+myfn <- load(myfn)
 print(typeof(myfn))
 
 getRefSeq(myfn)
