@@ -13,5 +13,6 @@ print(myfn)
 mybasenm <- basename(myfn)
 print(mybasenm)
 myfn <- load(paste0("../SB_Data/", myfn))
+print(typeof(myfn))
 
 getRefSeq(myfn)
