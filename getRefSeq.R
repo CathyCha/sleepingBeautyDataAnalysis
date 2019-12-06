@@ -8,7 +8,7 @@ library(IRanges)
 #add ref seq to data frame 
 getRefSeq <- function(slice){
   for (i in 1:length(slice$ref)) {
-    slice$ref[i] <- toString(BSgenome::getSeq(BSgenome.Mmusculus.UCSC.mm9, GRanges(slice$Chr[i], IRanges(slice$Location[i], slice$Location.1[i]))))
+    slice$ref[i] <- toString(BSgenome::getSeq(BSgenome.Mmusculus.UCSC.mm9, GenomicRanges::GRanges(slice$Chr[i], IRanges::IRanges(slice$Location[i], slice$Location.1[i]))))
   }
   return(slice)
 } 
@@ -21,7 +21,6 @@ mybasenm <- basename(myfn)
 print(mybasenm)
 myfn <- get(load(myfn))
 print(typeof(myfn))
-print(head(myfn))
 
 result <- getRefSeq(myfn)
 save(result, file=paste0("../finishedSB_Data/", mybasenm)
