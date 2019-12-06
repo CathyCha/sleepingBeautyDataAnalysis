@@ -1,7 +1,23 @@
 library(parallel)
+
+if (! require(BSgenome, quietly=TRUE)) {
+  BiocManager::install("BSgenome")
+}
 library(BSgenome)
+
+if (! require(GenomicRanges, quietly=TRUE)) {
+  BiocManager::install("GenomicRanges")
+}
 library(GenomicRanges)
+
+if (! require(BSgenome.Mmusculus.UCSC.mm9, quietly=TRUE)) {
+  BiocManager::install("BSgenome.Mmusculus.UCSC.mm9")
+}
 library(BSgenome.Mmusculus.UCSC.mm9)
+
+if (! require(IRanges, quietly=TRUE)) {
+  BiocManager::install("IRanges")
+}
 library(IRanges)
 
 
@@ -23,5 +39,5 @@ myfn <- get(load(myfn))
 print(typeof(myfn))
 
 result <- getRefSeq(myfn)
-save(result, file=paste0("../finishedSB_Data/", mybasenm)
+save(result, file=paste0("../finishedSB_Data/", mybasenm))
 
