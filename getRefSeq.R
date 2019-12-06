@@ -12,6 +12,6 @@ print(myfn)
 mybasenm <- basename(myfn)
 print(mybasenm)
 slice <- load(paste0("../SB_Data/", myfn))
-
+typeof(slice)
 
 # getRefSeq(slice)
