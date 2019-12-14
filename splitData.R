@@ -1,5 +1,5 @@
 # Load the data 
-load("../SB_Data/combinedAnnotParsed.Rdata")
+load("../SB_Data/SBData.Rdata")
 
 # split() dataframe into 500 slices and stored as a large list of dataframes 
 splitted <- split(puttogether, sample(rep(1:500, 26700)))
