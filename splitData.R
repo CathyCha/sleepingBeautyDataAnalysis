@@ -2,7 +2,7 @@
 load("../SB_Data/SBData.Rdata")
 
 # split() dataframe into 500 slices and stored as a large list of dataframes 
-splitted <- split(puttogether, sample(rep(1:500, 26700)))
+splitted <- split(puttogether, sample(rep(1:1000, 13400)))
 
 # save slices into separate Rdatas 
 for (i in 1:length(splitted)) {
