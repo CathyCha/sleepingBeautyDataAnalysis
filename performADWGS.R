@@ -1,4 +1,7 @@
-library(ActiveDriverWGS)
+source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ActiveDriverWGS.R")
+source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ADWGS_test.R")
+source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/fix_all_results.R")
+source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/format_muts.R")
 library(parallel)
 library(plyr)
 
@@ -8,14 +11,15 @@ print("done loading")
 print(myfn)
 mybasenm <- basename(myfn)
 print(mybasenm)
-slice <- readRDS(myfn)
+slice <- get(load(myfn))
 
 splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-mm9Elements <- load("../SB_Data/mm9Elements.Rdata")
+mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9.RData"))
 
 mcres <- parallel::mclapply(splitix, function(x, ele) {
   results = ActiveDriverWGS(mutations = mutations_df,
-                            elements = mm9Elements)
+                            elements = mm9Elements, 
+                            reference = "mm9")
   return(results)
 },ele=slice, mc.cores=8)
 
