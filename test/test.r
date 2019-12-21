@@ -9,7 +9,7 @@ mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9
 
 
 slice <- get(load("/u/ccha/SB_Data/slice44.Rdata"))
-slice = head(slice)
+slice <- slice[!duplicated(slice),]
   
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = ele,
