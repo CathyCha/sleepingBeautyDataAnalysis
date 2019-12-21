@@ -12,10 +12,10 @@ print(myfn)
 mybasenm <- basename(myfn)
 print(mybasenm)
 slice <- get(load(toString(myfn)))
+slice <- slice[!duplicated(slice),]
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
 mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9.RData"))
-typeof(mm9Elements)
 
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = ele,
