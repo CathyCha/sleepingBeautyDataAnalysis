@@ -3,6 +3,7 @@ source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ADWGS_test.R")
 source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/fix_all_results.R")
 source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/format_muts.R")
 library(parallel)
+library(BSgenome.Mmusculus.UCSC.mm9)
 library(plyr)
 
 mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9.RData"))
