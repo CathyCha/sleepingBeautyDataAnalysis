@@ -3,6 +3,7 @@ source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ADWGS_test.R")
 source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/fix_all_results.R")
 source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/format_muts.R")
 library(parallel)
+BiocManager::install("BSgenome.Mmusculus.UCSC.mm9")
 library(BSgenome.Mmusculus.UCSC.mm9)
 library(plyr)
 
