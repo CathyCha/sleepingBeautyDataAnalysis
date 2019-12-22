@@ -13,7 +13,7 @@ slice <- get(load("/u/ccha/SB_Data/slice44.Rdata"))
 slice <- slice[!duplicated(slice),]
 
 print("done loading")
-pring("slice with number of rows:")
+print("slice with number of rows:")
 print(length(slice))
   
 mcres <- parallel::mclapply(1, function(x, ele) {
