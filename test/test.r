@@ -1,10 +1,8 @@
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ActiveDriverWGS.R")
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ADWGS_test.R")
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/fix_all_results.R")
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/format_muts.R")
-library(parallel)
-library(BSgenome.Mmusculus.UCSC.mm9)
-library(plyr)
+source("/u/ccha/ActiveDriverWGSR/R/ADWGS_test.R")
+source("/u/ccha/ActiveDriverWGSR/R/fix_all_results.R")
+source("/u/ccha/ActiveDriverWGSR/R/format_muts.R")
+print("done")
+source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
 
 mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9.RData"))
 
