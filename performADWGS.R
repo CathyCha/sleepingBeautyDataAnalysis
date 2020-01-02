@@ -1,7 +1,7 @@
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ActiveDriverWGS.R")
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/ADWGS_test.R")
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/fix_all_results.R")
-source("/u/ccha/ActiveDriverWGSR-genomeVariety/R/format_muts.R")
+source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
+source("/u/ccha/ActiveDriverWGSR/R/ADWGS_test.R")
+source("/u/ccha/ActiveDriverWGSR/R/fix_all_results.R")
+source("/u/ccha/ActiveDriverWGSR/R/format_muts.R")
 library(parallel)
 library(plyr)
 
@@ -23,8 +23,6 @@ mcres <- parallel::mclapply(1, function(x, ele) {
                             reference = "mm9")
   return(results)
 },ele=slice, mc.cores=8)
-
-head(mcres)
 
 final <- ldply(mcres, data.frame)
 
