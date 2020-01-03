@@ -16,6 +16,9 @@ slice <- slice[!duplicated(slice),]
 print("done loading")
 print("slice with number of rows:")
 print(length(slice))
+
+BiocManager::install("BSgenome.Mmusculus.UCSC.mm9")
+library(BSgenome.Mmusculus.UCSC.mm9)
   
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = ele,
