@@ -22,9 +22,13 @@ library(IRanges)
 
 
 #add ref seq to data frame 
+
+
 getRefSeq <- function(slice){
   for (i in 1:length(slice$ref)) {
-    slice$ref[i] <- toString(BSgenome::getSeq(BSgenome.Mmusculus.UCSC.mm9, GenomicRanges::GRanges(slice$Chr[i], IRanges::IRanges(slice$Location[i], slice$Location.1[i]))))
+    slice$ref[i] <- toString(BSgenome::getSeq(BSgenome.Mmusculus.UCSC.mm9, 
+                                              GenomicRanges::GRanges(slice$Chr[i], 
+                                                                     IRanges::IRanges(slice$Location[i], slice$Location.1[i]))))
   }
   return(slice)
 } 

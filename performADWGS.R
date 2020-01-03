@@ -17,12 +17,21 @@ slice <- slice[!duplicated(slice),]
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
 mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9.RData"))
 
+print("loaded mm9 elements")
+BiocManager::install("BSgenome.Mmusculus.UCSC.mm9")
+library(BSgenome.Mmusculus.UCSC.mm9)
+
+print("installed BSgenome mm9")
+
+
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = ele,
                             elements = mm9Elements, 
                             reference = "mm9")
   return(results)
 },ele=slice, mc.cores=8)
+
+print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
