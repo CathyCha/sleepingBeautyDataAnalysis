@@ -1,8 +1,9 @@
 source("/u/ccha/ActiveDriverWGSR/R/ADWGS_test.R")
 source("/u/ccha/ActiveDriverWGSR/R/fix_all_results.R")
 source("/u/ccha/ActiveDriverWGSR/R/format_muts.R")
-print("done")
 source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
+library(BSgenome.Mmusculus.UCSC.mm9)
+
 
 print("done2")
 
