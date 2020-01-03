@@ -6,7 +6,7 @@ source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
 
 print("done2")
 
-mm9Elements <- get(load("/u/ccha/ActiveDriverWGS/data/elementsmm9.RData"))
+mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR/data/elementsmm9.RData"))
 
 print("done loading elements")
 
