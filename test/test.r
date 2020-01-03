@@ -4,6 +4,8 @@ source("/u/ccha/ActiveDriverWGSR/R/format_muts.R")
 print("done")
 source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
 
+print("done2")
+
 mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9.RData"))
 
 print("done loading elements")
