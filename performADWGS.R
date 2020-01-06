@@ -16,7 +16,7 @@ slice <- get(load(toString(myfn)))
 slice <- slice[!duplicated(slice),]
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR-genomeVariety/data/elementsmm9.RData"))
+mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR/data/elementsmm9.RData"))
 
 print("loaded mm9 elements")
 
