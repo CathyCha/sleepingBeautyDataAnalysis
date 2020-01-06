@@ -3,6 +3,8 @@ source("/u/ccha/ActiveDriverWGSR/R/fix_all_results.R")
 source("/u/ccha/ActiveDriverWGSR/R/format_muts.R")
 source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
 
+print(.libPaths())
+
 library(BSgenome.Mmusculus.UCSC.mm9)
 library(parallel)
 
