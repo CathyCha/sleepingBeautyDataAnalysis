@@ -1,4 +1,4 @@
-dir=~/SB_Data/*
+dir=~/SB_Data/element/*
 
 for file in $dir; do
     base_ext=${file##*/}

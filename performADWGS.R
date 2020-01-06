@@ -13,17 +13,15 @@ print(myfn)
 mybasenm <- basename(myfn)
 print(mybasenm)
 slice <- get(load(toString(myfn)))
-slice <- slice[!duplicated(slice),]
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR/data/elementsmm9.RData"))
-
-print("loaded mm9 elements")
+SBData <- get(load("/u/ccha/SB_Data/SBData.RData"))
+SBData <- SBData[!duplicated(SBData),]
 
 
 mcres <- parallel::mclapply(1, function(x, ele) {
-  results = ActiveDriverWGS(mutations = ele,
-                            elements = mm9Elements, 
+  results = ActiveDriverWGS(mutations = SBData,
+                            elements = ele, 
                             reference = "mm9")
   return(results)
 },ele=slice, mc.cores=8)
