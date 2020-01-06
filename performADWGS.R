@@ -13,11 +13,12 @@ print(myfn)
 mybasenm <- basename(myfn)
 print(mybasenm)
 slice <- get(load(toString(myfn)))
+print("done loading slice")
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
 SBData <- get(load("/u/ccha/SB_Data/SBData.RData"))
 SBData <- SBData[!duplicated(SBData),]
-
+print("done loading SBData")
 
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = SBData,
