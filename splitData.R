@@ -7,5 +7,5 @@ splitted <- split(mm9elements, sample(rep(1:300, 1600)))
 # save slices into separate Rdatas 
 for (i in 1:length(splitted)) {
   slice <- splitted[[i]]
-  save(slice, file=paste0("../SB_Data/slice", i, ".Rdata"))
+  save(slice, file=paste0("../mm9elements/slice", i, ".Rdata"))
 }
