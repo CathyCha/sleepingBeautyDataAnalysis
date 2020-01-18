@@ -25,7 +25,7 @@ mcres <- parallel::mclapply(1, function(x, ele) {
                             elements = ele, 
                             reference = "mm9")
   return(results)
-},ele=slice, mc.cores=8)
+},ele=slice, mc.cores=1)
 
 print("done activedriver")
 
