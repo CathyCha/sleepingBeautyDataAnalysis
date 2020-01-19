@@ -2,7 +2,7 @@
 load("../element/mm9element.RData")
 
 # split() dataframe into 30 slices
-splitted <- split(mm9elements, sample(rep(1:30, 1840)))
+splitted <- split(mm9, sample(rep(1:30, 1840)))
 
 # save slices into separate files
 for (i in 1:length(splitted)) {
