@@ -16,7 +16,7 @@ slice <- get(load(toString(myfn)))
 print("done loading slice")
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-SBData <- get(load("/u/ccha/SB_Data/SBData.Rdata"))
+SBData <- get(load("/u/ccha/SB_Data/SBData_final.Rdata"))
 SBData <- SBData[!duplicated(SBData),]
 print("done loading SBData")
 
