@@ -2,7 +2,6 @@ source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
 source("/u/ccha/ActiveDriverWGSR/R/ADWGS_test.R")
 source("/u/ccha/ActiveDriverWGSR/R/fix_all_results.R")
 source("/u/ccha/ActiveDriverWGSR/R/format_muts.R")
-print("here")
 library(parallel)
 library(plyr)
 library(BSgenome.Mmusculus.UCSC.mm9)
@@ -22,7 +21,7 @@ print("done loading SBData")
 
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = SBData,
-                            window_size = 300,
+                            window_size = 20000,
                             elements = ele, 
                             reference = "mm9")
   return(results)
@@ -32,4 +31,4 @@ print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-saveRDS(final, file=paste0("~/complete/", gsub(paste0(mybasenm, ".rds"), pattern = ".rds", replacement="_comp.rds", fixed=TRUE)))
+saveRDS(final, file=paste0("~/complete/complete2/", gsub(paste0(mybasenm, ".rds"), pattern = ".rds", replacement="_comp.rds", fixed=TRUE)))
