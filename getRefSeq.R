@@ -26,6 +26,5 @@ for (i in 1:length(slice$ref)) {
                                                                    IRanges::IRanges(slice$Location[i], slice$Location.1[i]))))
   slice$alt[i] <- slice$ref[i]
 }
-
 save(slice, file=paste0("/u/ccha/finishedGetRef/", mybasenm))
 
