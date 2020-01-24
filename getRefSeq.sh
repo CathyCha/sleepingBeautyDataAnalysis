@@ -1,4 +1,4 @@
-dir=~/u/ccha/mutationSlices/*
+dir=~/mutationSlices/*
 
 for file in $dir; do
     base_ext=${file##*/}
