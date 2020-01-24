@@ -16,12 +16,12 @@ slice <- get(load(toString(myfn)))
 print("done loading slice")
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-SBData <- get(load("/u/ccha/SB_Data/SBData_final.RData"))
+SBData <- get(load("/u/ccha/SB_Data/mouseBased.Rdata"))
 print("done loading SBData")
 
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = SBData,
-                            window_size = 20000,
+                            window_size = 300,
                             elements = ele, 
                             reference = "mm9")
   return(results)
@@ -31,4 +31,4 @@ print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-saveRDS(final, file=paste0("~/complete/complete2/", gsub(paste0(mybasenm, ".rds"), pattern = ".rds", replacement="_comp.rds", fixed=TRUE)))
+saveRDS(final, file=paste0("~/complete/", gsub(paste0(mybasenm, ".rds"), pattern = ".rds", replacement="_comp.rds", fixed=TRUE)))
