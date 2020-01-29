@@ -16,7 +16,7 @@ print("done loading slice")
 for (i in 1:length(slice$ref)) {
   slice$ref[i] <- toString(BSgenome::getSeq(BSgenome.Mmusculus.UCSC.mm9, 
                                             GenomicRanges::GRanges(slice$Chr[i], 
-                                                                   IRanges::IRanges(slice$Location[i], slice$Location.1[i]))))
+                                                                   IRanges::IRanges(slice$pos2[i], slice$pos2[i]))))
 }
 save(slice, file=paste0("/u/ccha/finishedGetRef/", mybasenm))
 
