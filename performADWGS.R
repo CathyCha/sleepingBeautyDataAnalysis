@@ -16,7 +16,7 @@ slice <- get(load(toString(myfn)))
 print("done loading slice")
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-SBData <- get(load("/u/ccha/SB_Data/mouseBased.Rdata"))
+SBData <- readRDS("/u/ccha/SB_Data/mouseBased.rds")
 print("done loading SBData")
 
 mcres <- parallel::mclapply(1, function(x, ele) {
