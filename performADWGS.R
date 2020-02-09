@@ -16,7 +16,7 @@ slice <- get(load(toString(myfn)))
 print("done loading slice")
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-SBData <- get(load("/u/ccha/SB_Data/PatientBasedSBData.Rdata"))
+SBData <- get(load("/u/ccha/SB_Data/mouseBasedGAlt.Rdata"))
 print("done loading SBData")
 
 mcres <- parallel::mclapply(1, function(x, ele) {
@@ -31,4 +31,4 @@ print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-saveRDS(final, file=paste0("~/complete/", paste0(mybasenm, ".Rdata")))
+saveRDS(final, file=paste0("/u/ccha/complete/mouseBased/", paste0(mybasenm, ".Rdata")))
