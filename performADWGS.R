@@ -31,4 +31,4 @@ print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-saveRDS(final, file=paste0("~/complete/", gsub(paste0(mybasenm, ".rds"), pattern = ".rds", replacement="_comp.rds", fixed=TRUE)))
+saveRDS(final, file=paste0("~/complete/", paste0(mybasenm, ".Rdata")))
