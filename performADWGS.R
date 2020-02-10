@@ -21,7 +21,7 @@ print("done loading SBData")
 
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = SBData,
-                            window_size = 10000,
+                            window_size = 20000,
                             elements = ele, 
                             reference = "mm9")
   return(results)
