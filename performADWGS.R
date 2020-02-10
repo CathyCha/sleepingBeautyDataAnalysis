@@ -31,4 +31,4 @@ print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-save(final, file=paste0("/u/ccha/complete/mouseBased/", paste0(mybasenm, ".Rdata")))
+save(final, file=paste0("/u/ccha/complete/mouseBasedRData/", paste0(mybasenm)))
