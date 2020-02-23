@@ -21,7 +21,7 @@ print("done loading SBData")
 
 mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = SBData,
-                            window_size = 50000,
+                            window_size = 30000,
                             elements = ele, 
                             reference = "mm9")
   return(results)
@@ -31,4 +31,4 @@ print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-saveRDS(final, file=paste0("/u/ccha/complete/tumourBasedRData/", paste0(mybasenm)))
+saveRDS(final, file=paste0("/u/ccha/complete/", paste0(mybasenm)))
