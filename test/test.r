@@ -7,6 +7,7 @@ library(plyr)
 library(BSgenome.Mmusculus.UCSC.mm9)
 
 slice <- readRDS("/u/ccha/test/cancerDrivers.rds")
+slice <- slice[!(duplicated[slice]),]
 print("done loading slice")
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
