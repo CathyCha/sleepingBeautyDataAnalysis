@@ -26,4 +26,4 @@ print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-saveRDS(final, file=paste0("/u/ccha/complete/", paste0(mybasenm)))
+saveRDS(final, file=paste0("/u/ccha/complete/", "test.rds"))
