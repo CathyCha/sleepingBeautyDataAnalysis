@@ -1,40 +1,28 @@
+source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
 source("/u/ccha/ActiveDriverWGSR/R/ADWGS_test.R")
 source("/u/ccha/ActiveDriverWGSR/R/fix_all_results.R")
 source("/u/ccha/ActiveDriverWGSR/R/format_muts.R")
-source("/u/ccha/ActiveDriverWGSR/R/ActiveDriverWGS.R")
-
-print(.libPaths())
-
-library(BSgenome.Mmusculus.UCSC.mm9)
 library(parallel)
+library(plyr)
+library(BSgenome.Mmusculus.UCSC.mm9)
 
-print("done2")
+slice <- readRDS("/u/ccha/test/cancerDrivers.rds")
+print("done loading slice")
 
-mm9Elements <- get(load("/u/ccha/ActiveDriverWGSR/data/elementsmm9.RData"))
+# splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
+SBData <- readRDS("/u/ccha/SB_Data/mouseBasedGalt.rds")
+print("done loading SBData")
 
-print("done loading elements")
-
-slice <- get(load("/u/ccha/SB_Data/slice44.Rdata"))
-slice <- slice[!duplicated(slice),]
-
-print("done loading")
-print("slice with number of rows:")
-print(length(slice))
-# 
-# BiocManager::install("BSgenome.Mmusculus.UCSC.mm9")
-# library(BSgenome.Mmusculus.UCSC.mm9)
-  
 mcres <- parallel::mclapply(1, function(x, ele) {
-  results = ActiveDriverWGS(mutations = ele,
-                            elements = mm9Elements, 
+  results = ActiveDriverWGS(mutations = SBData,
+                            window_size = 30000,
+                            elements = ele, 
                             reference = "mm9")
   return(results)
-},ele=slice, mc.cores=8)
+},ele=slice, mc.cores=1)
 
-print("done ActiveDriver")
+print("done activedriver")
 
 final <- ldply(mcres, data.frame)
 
-save(final, file="/u/ccha/test/test.rdata")
-
-print("done saving rdata")
+saveRDS(final, file=paste0("/u/ccha/complete/", paste0(mybasenm)))
