@@ -19,16 +19,11 @@ print("done loading slice")
 SBData <- readRDS("/u/ccha/SB_Data/mouseBasedGalt.rds")
 print("done loading SBData")
 
-mcres <- parallel::mclapply(1, function(x, ele) {
   results = ActiveDriverWGS(mutations = SBData,
-                            window_size = 5000000,
-                            elements = ele, 
+                            window_size = 100000,
+                            elements = slice, 
                             reference = "mm9")
-  return(results)
-},ele=slice, mc.cores=1)
 
 print("done activedriver")
 
-final <- ldply(mcres, data.frame)
-
-saveRDS(final, file=paste0("/u/ccha/complete/exonBased/", paste0(mybasenm)))
+saveRDS(result, file=paste0("/u/ccha/complete/exonBased/", paste0(mybasenm)))
