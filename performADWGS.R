@@ -26,4 +26,4 @@ print("done loading SBData")
 
 print("done activedriver")
 
-saveRDS(result, file=paste0("/u/ccha/complete/exonBased/", paste0(mybasenm)))
+saveRDS(results, file=paste0("/u/ccha/complete/exonBased/", paste0(mybasenm)))
