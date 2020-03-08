@@ -20,5 +20,5 @@ for (i in 1:length(slice$ref)) {
                                                                    IRanges::IRanges(slice$pos1[i], slice$pos2[i]))))
   slice$alt[i] <- "GTTGAC"
 }
-save(slice, file=paste0("/u/ccha/finishedGetRef/", mybasenm))
+saveRDS(slice, paste0("/u/ccha/finishedGetRef/", mybasenm))
 
