@@ -18,6 +18,7 @@ print("done loading slice")
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
 SBData <- readRDS("/u/ccha/SB_Data/SBData1tumour.rds")
 SBData <- SBData[!duplicated(SBData),]
+SBData$alt[1] <- "G"
 print("done loading SBData")
 
   results = ActiveDriverWGS(mutations = SBData,
