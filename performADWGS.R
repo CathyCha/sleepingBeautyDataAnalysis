@@ -26,4 +26,4 @@ print("done loading SBData")
 
 print("done activedriver")
 
-saveRDS(results, file=paste0("/u/ccha/complete/1tumourPerMouseGeneBased/", paste0(mybasenm)))
+saveRDS(results, file=paste0("/u/ccha/complete/1tumourPerMouseExonBased/", paste0(mybasenm)))
