@@ -16,7 +16,7 @@ slice <- readRDS(toString(myfn))
 print("done loading slice")
 
 # splitix <- parallel::splitIndices(nx=length(slice), ncl=ceiling(length(slice) / 1))
-SBData <- readRDS("/u/ccha/SB_Data/mouseBasedGalt.rds")
+SBData <- readRDS("/u/ccha/SB_Data/SBData1tumour.rds")
 print("done loading SBData")
 
   results = ActiveDriverWGS(mutations = SBData,
@@ -26,4 +26,4 @@ print("done loading SBData")
 
 print("done activedriver")
 
-saveRDS(results, file=paste0("/u/ccha/complete/exonBased/", paste0(mybasenm)))
+saveRDS(results, file=paste0("/u/ccha/complete/1tumourPerMouseGeneBased/", paste0(mybasenm)))
