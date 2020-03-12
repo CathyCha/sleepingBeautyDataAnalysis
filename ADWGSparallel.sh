@@ -1,4 +1,4 @@
-dir=~/mm9elements/ws100kb/*
+dir=~/mm9elements/exonBased/*
 
 for file in $dir; do
     base_ext=${file##*/}
