@@ -22,10 +22,10 @@ SBData$alt[1] <- "G"
 print("done loading SBData")
 
   results = ActiveDriverWGS(mutations = SBData,
-                            window_size = 500000,
+                            window_size = 1000000,
                             elements = slice, 
                             reference = "mm9")
 
 print("done activedriver")
 
-saveRDS(results, file=paste0("/u/ccha/complete/1tumourPerMouseExonBasedWs500kb/", paste0(mybasenm)))
+saveRDS(results, file=paste0("/u/ccha/complete/1tumourPerMouseExonBasedWs1mb/", paste0(mybasenm)))
