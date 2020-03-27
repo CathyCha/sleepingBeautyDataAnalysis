@@ -22,7 +22,7 @@ SBData$alt[1] <- "G"
 print("done loading SBData")
 
   results = ActiveDriverWGS(mutations = SBData,
-                            window_size = 1000000,
+                            window_size = 100000,
                             elements = slice, 
                             reference = "mm9")
 
