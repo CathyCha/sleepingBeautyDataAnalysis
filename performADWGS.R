@@ -28,4 +28,4 @@ print("done loading SBData")
 
 print("done activedriver")
 
-saveRDS(results, file=paste0("/u/ccha/complete/readCountReducedmetaMouse100kb/", paste0(mybasenm)))
+saveRDS(results, file=paste0("/u/ccha/complete/readCountReducedmetaMouse100kbPoisson/", paste0(mybasenm)))
